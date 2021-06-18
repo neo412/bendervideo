@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>BenderVideo</title>
+</head>
+<style>
+    body {
+        margin: 0px;
+        background: rgb(39,38,51);
+        background: linear-gradient(90deg, rgba(39,38,51,1) 0%, rgba(0,0,0,1) 54%);
+        font-family: 'Inter', sans-serif;
+
+    }
+    .header {
+        background: rgb(39,38,51);
+        background: linear-gradient(90deg, rgba(39,38,51,1) 0%, rgba(0,0,0,1) 54%);
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header img {
+        width: 200px;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }   
+    .header__menu {
+        margin-right: 30px;
+    }
+    .header__menu ul {
+        display: none;
+        list-style: none;
+        padding: 0px;
+        position: absolute;
+        width: 100px;
+        text-align: right;
+        margin: 0px 0px 0px -14px;
+    }
+    .header__menu:hover ul, ul:hover {
+        display: block;
+    }
+    .header__menu li {
+        margin: 5px 0px;
+    }
+    .header__menu li a {
+        color: white;
+        text-decoration: none;
+    }
+    .header__menu li a:hover {
+        text-decoration: underline;
+    }
+    .header__menu--profile {
+        margin-right: 8px;
+        margin-top: 0px;
+        display: flex;
+        
+    }
+    .header__menu--profile img {
+        width: 30px;
+        margin-right: 8px;
+        margin-top: 0px;
+    }
+    .header__menu--profile p {
+        margin: 0px;
+        margin-top: 4px;
+        color: white;
+        
+    }
+    .search {
+        margin-top: 60px;
+        margin-bottom: 0px;
+        height: 130px;
+        text-align: center;
+    }
+    .search__title {
+        color: white;
+        font-size: 20px;
+
+    }
+    .input {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 2px solid white;
+        border-radius: 20px;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        height: 50px;
+        padding: 0px 20px;
+        width: 70%;
+        outline: none;
+        margin-bottom: 0px;
+
+        
+    }
+    .carousel {
+        width: 100%;
+        overflow: scroll;
+        padding: 30px;
+        position: relative;
+        margin-right: 30px;
+    
+    }
+    .carousel__container {
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px;    
+    }
+    .carousel__item {
+        background-color: grey;
+        width: 320px;
+        height: 200px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-right: 10px;
+        display: inline-block; 
+        cursor: pointer;
+        transition: 450ms;
+        transform-origin: center left;
+        position: relative;
+    }
+    .carousel__item:hover ~ .carousel__item {
+        transform: translate3d(100px, 0, 0);
+    }
+    .carousel__container:hover .carousel__item {
+        opacity: 0.3;
+    }
+    .carousel__container:hover .carousel__item:hover {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    .carousel-item__img {
+        width: 320px;
+        height: 200px;
+        object-fit: cover;
+    }
+    .carousel-item__details {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+        font-size: 10px;
+        opacity: 1;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .carousel-item__details--title {
+        color: white;
+        margin-top: 115px;
+        margin-left: 10px;
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+    .carousel-item__details--subtitle {
+        color: white;
+        margin-top: 0px;
+        margin-left: 10px;
+    } 
+    .carousel-play {
+        width: 30px;
+        margin-left: 236px;
+
+        
+    }
+    .carousel-more {
+        width: 30px;
+        margin-left: 0px;
+    }
+
+</style>  
+<body>
+    <header class="header">
+        <img class="header__img" src="LOGOBENDER.png" alt+"">
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img src="icons8-usuario-96.png">
+                <p>Perfil</p>
+            </div>
+            <ul>
+                <li><a href="/">Account</a></li>
+                <li><a href="/">Logout</a></li>
+            </ul>
+
+            </div>
+        </div>
+    </header>
+    
+    <section class="search">
+        <h2 class="search__title">Que quieres ver hoy?</h2>
+        <input class="input" type="text" placeholder="Buscar...">
+    </section>
+    <section class="carousel">
+        <div class="carousel__container">
+            <div class="carousel__item">
+                <img class="carousel-item__img" src="tenet.jpg" alt="">
+                <div class="carousel-item__details">
+                    <div>
+                    <img class="carousel-play" src="https://img.icons8.com/flat-round/64/fa314a/play--v1.png"/>
+                    <img class="carousel-more" src="https://img.icons8.com/ios-filled/50/26e07f/connection-status-off.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Tenet</p>
+                    <p class="carousel-item__details--subtitle">2020 ‧ Acción/Suspenso ‧ 2h 30m </p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <img class="carousel-item__img" src="Ad-Astra-critica-700.jpg" alt="">
+                <div class="carousel-item__details">
+                    <div>
+                    <img class="carousel-play" src="https://img.icons8.com/flat-round/64/fa314a/play--v1.png"/>
+                    <img class="carousel-more" src="https://img.icons8.com/ios-filled/50/26e07f/connection-status-off.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Ad AStra</p>
+                    <p class="carousel-item__details--subtitle">2019 ‧ Ciencia ficción/Drama ‧ 2h 4m </p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <img class="carousel-item__img" src="endgame.jpg" alt="">
+                <div class="carousel-item__details">
+                    <div>
+                    <img class="carousel-play" src="https://img.icons8.com/flat-round/64/fa314a/play--v1.png"/>
+                    <img class="carousel-more" src="https://img.icons8.com/ios-filled/50/26e07f/connection-status-off.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Avengers: End Game</p>
+                    <p class="carousel-item__details--subtitle">2019 ‧ Acción/Ciencia ficción ‧ 3h 2m </p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <img class="carousel-item__img" src="MementoPortada.jpg" alt="">
+                <div class="carousel-item__details">
+                    <div>
+                    <img class="carousel-play" src="https://img.icons8.com/flat-round/64/fa314a/play--v1.png"/>
+                    <img class="carousel-more" src="https://img.icons8.com/ios-filled/50/26e07f/connection-status-off.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Memento</p>
+                    <p class="carousel-item__details--subtitle">2000 ‧ Suspenso/Misterio ‧ 1h 54m </p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <img class="carousel-item__img" src="matrix.jpeg" alt="">
+                <div class="carousel-item__details">
+                    <div>
+                    <img class="carousel-play" src="https://img.icons8.com/flat-round/64/fa314a/play--v1.png"/>
+                    <img class="carousel-more" src="https://img.icons8.com/ios-filled/50/26e07f/connection-status-off.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">MATRIX</p>
+                    <p class="carousel-item__details--subtitle">2020 150 minutos </p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <img class="carousel-item__img" src="CNN-Justice-Leagu2-2.jpeg" alt="">
+                <div class="carousel-item__details">
+                    <div>
+                    <img class="carousel-play" src="https://img.icons8.com/flat-round/64/fa314a/play--v1.png"/>
+                    <img class="carousel-more" src="https://img.icons8.com/ios-filled/50/26e07f/connection-status-off.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Justice League: Snyder Cut</p>
+                    <p class="carousel-item__details--subtitle">2020 150 minutos </p>
+                </div>
+            </div>
+            <div class="carousel__item">
+                <img class="carousel-item__img" src="joker.jpg" alt="">
+                <div class="carousel-item__details">
+                    <div>
+                    <img class="carousel-play" src="https://img.icons8.com/flat-round/64/fa314a/play--v1.png"/>
+                    <img class="carousel-more" src="https://img.icons8.com/ios-filled/50/26e07f/connection-status-off.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Joker</p>
+                    <p class="carousel-item__details--subtitle">2020 150 minutos </p>
+                </div>
+            </div> 
+            <div class="carousel__item">
+                <img class="carousel-item__img" src="es-machista-once-upon-a-time-in-hollywood-tarantino.jpg" alt="">
+                <div class="carousel-item__details">
+                    <div>
+                    <img class="carousel-play" src="https://img.icons8.com/flat-round/64/fa314a/play--v1.png"/>
+                    <img class="carousel-more" src="https://img.icons8.com/ios-filled/50/26e07f/connection-status-off.png"/>
+                    </div>
+                    <p class="carousel-item__details--title">Unce Upon a Time in Hollywood</p>
+                    <p class="carousel-item__details--subtitle">2020 150 minutos </p>
+                </div>
+            </div>   
+        </div>
+    </section>
+</body>
+</html>
