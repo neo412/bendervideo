@@ -3,7 +3,7 @@ body {
     background: url(./Assets/espacio-estrellas-universo-nebulosa_3840x2160_xtrafondos.com\ \(1\).jpg);
     background-repeat: no-repeat;
     background-size: 120% 100%;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
     font-family: 'Inter', sans-serif;
 
 }
